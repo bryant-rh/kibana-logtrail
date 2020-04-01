@@ -1,0 +1,338 @@
+{
+  "version" : 2,
+  "index_patterns" : [
+    {      
+      "es": {
+        "default_index": "dev-test-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "kubernetes.node.name: {{{kubernetes.node.name}}} | kubernetes.namespace: {{{kubernetes.namespace}}} | kubernetes.pod.name: {{{kubernetes.pod.name}}} | stream: {{{stream}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+         "field" : "stream",
+	 "mapping": {
+                "stderr": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "stdout": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "firewall-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "| message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "history-log-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "| message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "ips-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "Severity: {{{Severity}}} | SrcIPAddr: {{{SrcIPAddr}}} | SrcPort: {{{SrcPort}}} | DstIPAddr: {{{DstIPAddr}}}| DstPort: {{{DstPort}}} |message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+         "field" : "Severity",
+	 "mapping": {
+                "CRITICAL": "#FF0000",
+                "HIGH": "#FFEF96",
+                "MEDIUM": "#B5E7A0",
+                "LOW": "#CFE0E8"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "k8s-prod-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "kubernetes.node.name: {{{kubernetes.node.name}}} | kubernetes.namespace: {{{kubernetes.namespace}}} | kubernetes.pod.name: {{{kubernetes.pod.name}}} | stream: {{{stream}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+         "field" : "stream",
+	 "mapping": {
+                "stderr": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "stdout": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "mysql-slow-log-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "mysql.slowlog.user: {{{mysql.slowlog.user}}} | query_time: {{{mysql.slowlog.query_time.sec}}} | mysql.slowlog.query: {{{mysql.slowlog.query}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "openstack-cinder-log-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "fields.name: {{{fields.name}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "openstack-cinder-scheduler-log-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "fields.name: {{{fields.name}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "openstack-neutron-log-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "fields.name: {{{fields.name}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    },{      
+      "es": {
+        "default_index": "openstack-nova-compute-log-*",
+        "allow_url_parameter": false
+      },
+      "tail_interval_in_seconds": 10,
+      "es_index_time_offset_in_seconds": 0,
+      "display_timezone": "local",
+      "display_timestamp_format": "YYYY MMM DD HH:mm:ss",
+      "max_buckets": 500,
+      "default_time_range_in_days" : 7,
+      "max_hosts": 100,
+      "max_events_to_keep_in_viewer": 5000,
+      "default_search": "",
+      "fields" : {
+        "mapping" : {
+            "timestamp" : "@timestamp",
+            "hostname" : "host",
+            "program": "process",
+            "message": "message"
+        },
+        "message_format": "fields.name: {{{fields.name}}} | message: {{{message}}}",
+        "keyword_suffix" : "keyword"
+      },
+      "color_mapping" : {
+	 "mapping": {
+                "ERROR": "#FF0000",
+                "WARN": "#FFEF96",
+                "DEBUG": "#B5E7A0",
+                "TRACE": "#CFE0E8",
+                "INFO": "#339999"
+            }
+      }
+    }
+  ]
+}
